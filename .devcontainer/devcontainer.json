@@ -1,5 +1,5 @@
 {
-	"name": "JSON Schema TypeScript CodeGen",
+	"name": "JS Types",
 	"dockerComposeFile": "./docker-compose.yml",
 	"service": "devcontainer",
 	"workspaceFolder": "/app/",

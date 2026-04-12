@@ -18,20 +18,7 @@ lint--oxlint:
 
 lint: lint--prettier lint--tsc lint--oxlint
 
-.PHONY: tests
-tests: lint
-	@node --test
-
-.PHONY: coverage
-coverage: lint coverage--skip-lint
-
-coverage--skip-lint:
-	@node --experimental-test-coverage --test-coverage-include='${PWD}/src/**/*.ts' --test
-
-coverage--lcov:
-	@node --experimental-test-coverage --test-coverage-include='${PWD}/src/**/*.ts' --test --test-reporter=lcov --test-reporter-destination=coverage/lcov.info
-
-npm-prep: tests
+npm-prep:
 	@echo 'building from ./tsconfig.app-npm.json'
 	@./node_modules/.bin/tsc --project ./tsconfig.app-npm.json
 	@npm publish --dry-run

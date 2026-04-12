@@ -1,7 +1,3 @@
-import type {
-	StringPassesRegex,
-} from '../types.ts';
-
 declare global {
 	interface Array<T> {
 		map<U>(
@@ -36,14 +32,6 @@ declare global {
 			K = (keyof T & string),
 		>(o: T): K[];
 		keys(o: object): string[];
-	}
-
-	interface RegExp
-	{
-		test<T extends string>(string: T): string is StringPassesRegex<
-			this,
-			T
-		>;
 	}
 }
 
