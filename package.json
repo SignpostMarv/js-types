@@ -8,18 +8,16 @@
     "url": "git+https://github.com/SignpostMarv/js-types.git"
   },
   "funding": "https://github.com/SignpostMarv/js-types?sponsor=1",
-  "exports": {
-    ".": {
-      "types": "./src/javascript/types.d.ts",
-      "default": "./src/javascript/types.js"
-    }
-  },
+  "exports": "./index.js",
+  "types": "./index.d.ts",
   "engines": {
     "node": "^25.0"
   },
   "files": [
-    "src/**/*.js",
-    "src/**/*.ts"
+    "index.js",
+    "index.js.map",
+    "index.d.ts",
+    "index.ts"
   ],
   "devDependencies": {
     "@signpostmarv/oxlint-config": "^0.3.1",
