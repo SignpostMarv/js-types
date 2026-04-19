@@ -18,7 +18,11 @@ lint--oxlint:
 
 lint: lint--prettier lint--tsc lint--oxlint
 
-npm-prep:
+npm-prep: test
 	@echo 'building from ./tsconfig.app-npm.json'
 	@./node_modules/.bin/tsc --project ./tsconfig.app-npm.json
 	@npm publish --dry-run
+
+test: lint
+	@node ./create-fixtures.ts
+	@node --test

@@ -17,6 +17,4 @@ jobs:
                   node-version: 25.x
                   cache: 'npm'
             - run: npm ci
-            - run: ./node_modules/.bin/tsc --project ./tsconfig.app-check.json
-            - run: ./node_modules/.bin/prettier . --check
-            - run: ./node_modules/.bin/oxlint
+            - run: make test

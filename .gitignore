@@ -3,3 +3,4 @@
 /**/*.d.ts
 /**/*.map
 /coverage/
+/tests/fixtures/**/*.pass.*.ts
