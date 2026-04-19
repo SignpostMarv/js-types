@@ -1,3 +1,4 @@
+(() => {
 const arr1: [
 	string,
 	...string[],
@@ -32,3 +33,4 @@ test1(arr1.map((e) => e));
 test2(arr2);
 
 test2(arr2.map((e) => e));
+})();

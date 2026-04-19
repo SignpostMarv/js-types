@@ -1,3 +1,4 @@
+(() => {
 const foo: {
 	[key: `${string}_${string}`]: `${string}:${number}`,
 } = {
@@ -9,3 +10,4 @@ function typed([key, value]: [`${string}_${string}`, `${string}:${number}`]) {
 }
 
 Object.entries(foo).map((e) => typed(e));
+})();
