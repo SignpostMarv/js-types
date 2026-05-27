@@ -32,6 +32,11 @@ declare global {
 			K = (keyof T & string),
 		>(o: T): K[];
 		keys(o: object): string[];
+
+		values<
+			O extends {[key: string]: unknown},
+		>(o: O): O[keyof O][];
+		values<T>(o: { [s: string]: T } | ArrayLike<T>): T[];
 	}
 }
 

@@ -10,4 +10,5 @@
 	}
 
 	Object.keys(foo).map((e) => typed(e));
+	Object.values(({foo})).forEach((e) => Object.keys(e).map((f) => typed(f)));
 })();
