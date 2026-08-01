@@ -16,11 +16,11 @@ import {
 import type {
 	Diagnostic,
 	DiagnosticMessageChain,
-} from 'typescript';
+} from '@typescript/typescript6';
 import {
 	createProgram,
 	getPreEmitDiagnostics,
-} from 'typescript';
+} from '@typescript/typescript6';
 
 function expect_diagnostic_message(
 	actual: Diagnostic[],
