@@ -55,7 +55,7 @@ function expect_diagnostic_message(
 			return match;
 		}),
 		undefined,
-		message,
+		message || 'did not find diagnostic message',
 	);
 }
 
