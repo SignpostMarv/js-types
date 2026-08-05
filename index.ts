@@ -1,23 +1,20 @@
 declare global {
+	type NonEmptyArray<T> = [T, ...T[]];
+
 	interface Array<T> {
 		every<
 			S extends T,
+			Before extends T[],
+			After extends S[],
+			Item extends After[number],
 		>(
+			this: After,
 			predicate: (
-				value: T,
+				value: Before[number],
 				index: number,
-				array: [T, T, ...T[]],
-			) => value is S, thisArg?: unknown
-		): this is [S, S, ...S[]];
-		every<
-			S extends T,
-		>(
-			predicate: (
-				value: T,
-				index: number,
-				array: [T, ...T[]],
-			) => value is S, thisArg?: unknown
-		): this is [S, ...S[]];
+				array: Before,
+			) => value is Item,
+		): this is {[K in keyof After]: Item};
 		every<
 			S extends T,
 		>(
