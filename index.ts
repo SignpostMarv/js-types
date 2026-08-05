@@ -1,5 +1,33 @@
 declare global {
 	interface Array<T> {
+		every<
+			S extends T,
+		>(
+			predicate: (
+				value: T,
+				index: number,
+				array: [T, T, ...T[]],
+			) => value is S, thisArg?: unknown
+		): this is [S, S, ...S[]];
+		every<
+			S extends T,
+		>(
+			predicate: (
+				value: T,
+				index: number,
+				array: [T, ...T[]],
+			) => value is S, thisArg?: unknown
+		): this is [S, ...S[]];
+		every<
+			S extends T,
+		>(
+			predicate: (
+				value: T,
+				index: number,
+				array: T[],
+			) => value is S, thisArg?: unknown
+		): this is S[];
+
 		map<U>(
 			callbackfn: (value: T, index: number, array: [T, T, ...T[]]) => U,
 			thisArg?: unknown,
